@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int animationVariable = 0;
+    private Animator animator;
+
+    // _animator 세팅 
+    void Awake()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
+        // animationVariable을 수정
+        animator.SetInt("Mushroom_Idle", animationVariable);
+        animator.
     }
 }
