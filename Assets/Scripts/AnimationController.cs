@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
@@ -13,16 +11,14 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void SetanimationVariable()
+    public void OnMouseDown()
     {
         animator.SetInteger("Mushroom_Idle", animationVariable);
-        animator.SetInteger("Mushroom_Jump", animationVariable = 1);
-        animator.SetInteger("Mushroom_Attacked", animationVariable = 2);
-    }
-    void OnMouseDown()
-    {
+        animator.SetInteger("Mushroom_Jump", animationVariable);
+        animator.SetInteger("Mushroom_Attacked", animationVariable);
+        animationVariable++;
+        if (animationVariable == 3) animationVariable = 0;
         // 각 번호를 매기고 누르면 번호를 바꿔서 부르게
         // animationVariable을 수정
-      
     }
 }
